@@ -29,3 +29,4 @@ C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\refi
 C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\TransPoster.MVC.pdb
 C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\TransPoster.MVC.genruntimeconfig.cache
 C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\ref\TransPoster.MVC.dll
+C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\bin\Debug\net7.0\bundleconfig.json
