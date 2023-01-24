@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wduho\\source\\repos\\duhowise\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj": {}
+    "C:\\Users\\adzam\\source\\repos\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wduho\\source\\repos\\duhowise\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj": {
+    "C:\\Users\\adzam\\source\\repos\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wduho\\source\\repos\\duhowise\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj",
+        "projectUniqueName": "C:\\Users\\adzam\\source\\repos\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj",
         "projectName": "TransPoster.MVC",
-        "projectPath": "C:\\Users\\wduho\\source\\repos\\duhowise\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj",
-        "packagesPath": "C:\\Users\\wduho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wduho\\source\\repos\\duhowise\\datatables\\src\\TransPoster.MVC\\obj\\",
+        "projectPath": "C:\\Users\\adzam\\source\\repos\\datatables\\src\\TransPoster.MVC\\TransPoster.MVC.csproj",
+        "packagesPath": "C:\\Users\\adzam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adzam\\source\\repos\\datatables\\src\\TransPoster.MVC\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\wduho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adzam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/acsint/HRIS/_packaging/Adaptive-HRIS/nuget/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {

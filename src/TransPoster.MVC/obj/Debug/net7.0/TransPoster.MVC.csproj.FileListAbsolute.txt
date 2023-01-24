@@ -30,3 +30,6 @@ C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\Tran
 C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\TransPoster.MVC.genruntimeconfig.cache
 C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\ref\TransPoster.MVC.dll
 C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\bin\Debug\net7.0\bundleconfig.json
+C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\scopedcss\Views\Shared\_AppLayout.cshtml.rz.scp.css
+C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\scopedcss\Views\Auth\Login.cshtml.rz.scp.css
+C:\Users\adzam\source\repos\datatables\src\TransPoster.MVC\obj\Debug\net7.0\scopedcss\Views\Shared\_AuthLayout.cshtml.rz.scp.css

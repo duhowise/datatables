@@ -1,13 +1,13 @@
-﻿@model List<string>
+﻿@model List<TransPoster.MVC.ViewComponents.Shared.NavItem>
 
 <div class="position-sticky pt-3 sidebar-sticky">
     <ul class="nav flex-column">
         @foreach (var item in Model)
         {
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">
-                    <i class="bi bi-archive"></i>
-                    @item
+                <a class="nav-link" asp-controller="@item.Controller" asp-action="@item.Action">
+                    <i class="bi bi-@item.Icon"></i>
+                    @item.Controller
                 </a>
             </li>
         }
