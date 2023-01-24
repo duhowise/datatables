@@ -1,4 +1,12 @@
+using TransPoster.MVC.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.GetDataBaseDbContextConfig(builder.Configuration);
+builder.Services.GetUserIdentityConfig();
+var settings = builder.Services.GetApplicationSettings(builder.Configuration);
+builder.Services.GetJwtAuthenticationConfig(settings);
+builder.Services.GetInjectedRepositories();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorOptions(options =>
