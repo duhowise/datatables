@@ -731,3 +731,7 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/visualbasic,csharp,visualstudiocode,visualstudio,rider
 .vs/TransPoster/v17/.suo
+/.vs/TransPoster/v17/.suo
+/.vs/slnx.sqlite
+/src/TransPoster.MVC/obj/Debug/net7.0/ref/TransPoster.MVC.dll
+/src/TransPoster.MVC/obj/Debug/net7.0/scopedcss/projectbundle/TransPoster.MVC.bundle.scp.css
