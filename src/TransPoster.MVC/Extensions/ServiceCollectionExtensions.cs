@@ -110,14 +110,6 @@ public static class ServiceCollectionExtensions
                 },
             };
         });
-        //services.AddAuthorization(options =>
-        //{
-        //    foreach (var permission in Permissions.GetPermissions())
-        //        options.AddPolicy(permission, policy => policy.RequireClaim(ApplicationClaimTypes.Permission, permission));
-        //});
-        //services.AddHttpContextAccessor();
-        //services.AddScoped<ICurrentUserService, CurrentUserService>();
-        //services.AddScoped<IAmazonSimpleStorageService, AmazonSimpleStorageService>();
         services.AddDataProtection();
         return services;
     }
