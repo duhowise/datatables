@@ -1,4 +1,4 @@
-﻿namespace TransPorter.Domain.Shared;
+﻿namespace TransPorter.Shared.Interfaces;
 
 public interface IEntity
 {

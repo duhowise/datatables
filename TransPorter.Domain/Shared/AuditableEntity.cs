@@ -1,4 +1,6 @@
-﻿namespace TransPorter.Domain.Shared;
+﻿using TransPorter.Shared.Interfaces;
+
+namespace TransPorter.Domain.Shared;
 
 internal class AuditableEntity : IAuditableEntity
 {

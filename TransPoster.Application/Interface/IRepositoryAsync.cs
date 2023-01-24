@@ -1,4 +1,4 @@
-﻿using TransPorter.Domain.Shared;
+﻿using TransPorter.Shared.Interfaces;
 
 namespace TransPoster.Application.Interface;
 

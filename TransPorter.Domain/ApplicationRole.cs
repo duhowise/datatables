@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using TransPorter.Domain.Shared;
+using TransPorter.Shared.Interfaces;
 
 namespace TransPorter.Domain;
 

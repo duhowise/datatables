@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TransPorter.Domain.Shared;
+using TransPorter.Shared.Interfaces;
 using TransPoster.Application.Interface;
 
 namespace TransPorter.Infrastructure;
