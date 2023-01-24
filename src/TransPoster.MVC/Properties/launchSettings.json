@@ -14,7 +14,9 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5060",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Secret": "ad1e875b-713d-41a7-9f70-cd1d9225ba67",
+        "AppConnectionString": "server=.;database=TransPoster_DB;Trusted_Connection=true"
       }
     },
     "https": {
@@ -23,14 +25,19 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7101;http://localhost:5060",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Secret": "ad1e875b-713d-41a7-9f70-cd1d9225ba67",
+        "AppConnectionString": "server=.;database=TransPoster_DB;Trusted_Connection=true"
       }
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Secret": "ad1e875b-713d-41a7-9f70-cd1d9225ba67",
+        "AppConnectionString": "server=.;database=TransPoster_DB;Trusted_Connection=true"
+      }
       }
     }
   }

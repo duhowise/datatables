@@ -36,14 +36,13 @@ public static class ServiceCollectionExtensions
     private static void ConfigureDbContextOptions(
         this DbContextOptionsBuilder options,
         IConfiguration configuration)
-        => options.UseSqlServer(/*Environment.GetEnvironmentVariable("CONNECTION_STRING") ??*/ 
-            configuration.GetConnectionString("AppConnectionString"));
+        => options.UseSqlServer(Environment.GetEnvironmentVariable("AppConnectionString"));
 
     public static IServiceCollection GetJwtAuthenticationConfig(
         this IServiceCollection services,
         AppConfiguration config)
     {
-        var key = Encoding.ASCII.GetBytes(/*Environment.GetEnvironmentVariable("APP_CONFIG_SECRET") ??*/ config.Secret);
+        var key = Encoding.ASCII.GetBytes(Environment.GetEnvironmentVariable("Secret"));
         services.AddAuthentication(auth =>
         {
             auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
