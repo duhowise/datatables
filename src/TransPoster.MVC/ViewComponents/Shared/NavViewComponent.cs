@@ -7,23 +7,13 @@ public class NavViewComponent : ViewComponent
 {
     private readonly ILogger<NavViewComponent> _logger;
 
-    private readonly List<NavItem> _navItems = new()
-    {
-        new NavItem("Users", "users", nameof(UsersController), nameof(UsersController.Index)),
-        new NavItem("Roles", "clipboard", nameof(RolesController), nameof(RolesController.Index)),
-    };
 
     public NavViewComponent(ILogger<NavViewComponent> logger) => _logger = logger;
 
     public async Task<IViewComponentResult> InvokeAsync()
     {
-        _logger.LogInformation("These are the items: ", _navItems);
+        _logger.LogInformation("These are cool stuff we are doing here");
 
-        return View(_navItems);
+        return View();
     }
-}
-
-public record NavItem(string Name, string Icon, string ControllerName, string Action)
-{
-    public string Controller => ControllerName.Replace("Controller", "");
 }
