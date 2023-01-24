@@ -1,8 +1,30 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{C67D3402-A76C-4FE3-BDD1-65DDA10BED5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TransPoster.MVC", "src\TransPoster.MVC\TransPoster.MVC.csproj", "{0E20D6FD-2466-4320-92CB-003C24133570}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E20D6FD-2466-4320-92CB-003C24133570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E20D6FD-2466-4320-92CB-003C24133570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E20D6FD-2466-4320-92CB-003C24133570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E20D6FD-2466-4320-92CB-003C24133570}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E20D6FD-2466-4320-92CB-003C24133570} = {C67D3402-A76C-4FE3-BDD1-65DDA10BED5D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A944F08-FA51-43B5-B629-1C307EC15020}
 	EndGlobalSection
 EndGlobal
