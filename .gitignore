@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/TransPoster.MVC/bin/Debug/net7.0
+/src/TransPoster.MVC/obj
+/src/TransPoster.MVC/ScaffoldingReadMe.txt
+/.vs/VSWorkspaceState.json
