@@ -133,6 +133,7 @@ public static class ServiceCollectionExtensions
             options.User.RequireUniqueEmail = true;
             options.SignIn.RequireConfirmedEmail = true;
             options.SignIn.RequireConfirmedAccount = true;
+            options.Lockout.MaxFailedAccessAttempts = 5;
         }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
         services.Configure<DataProtectionTokenProviderOptions>(options => options.TokenLifespan = TimeSpan.FromHours(48));
         return services;
