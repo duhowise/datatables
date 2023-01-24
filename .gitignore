@@ -735,3 +735,11 @@ Temporary Items
 /.vs/slnx.sqlite
 /src/TransPoster.MVC/obj/Debug/net7.0/ref/TransPoster.MVC.dll
 /src/TransPoster.MVC/obj/Debug/net7.0/scopedcss/projectbundle/TransPoster.MVC.bundle.scp.css
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.nuget.cache
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.dgspec.json
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.props
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.targets
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.assets.cache
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache
