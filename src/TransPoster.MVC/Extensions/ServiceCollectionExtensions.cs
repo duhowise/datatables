@@ -1,13 +1,18 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Keed_Agent_Loans.AuthService.Application.Services;
+using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System.Net;
+using System.Reflection;
 using System.Security.Claims;
 using System.Text;
 using TransPorter.Domain;
 using TransPorter.Infrastructure;
+using TransPorter.Shared.Interfaces;
+using TransPorter.Shared.Services;
 using TransPorter.Shared.Wrapper;
 using TransPoster.Application;
 using TransPoster.Application.Interface;
@@ -110,6 +115,7 @@ public static class ServiceCollectionExtensions
             };
         });
         services.AddDataProtection();
+        services.AddScoped<ICurrentUserService, CurrentUserService>();
         return services;
     }
 
@@ -132,8 +138,21 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection GetInjectedRepositories(this IServiceCollection services)
     {
+        services.AddTransient<ITokenService, TokenService>();
         services.AddTransient(typeof(IRepositoryAsync<>), typeof(RepositoryAsync<>));
         services.AddTransient<IUnitOfWork, UnitOfWork>();
+        return services;
+    }
+
+    public static IServiceCollection GetApplicationLayerConfig<T>(this IServiceCollection services) where T : class
+    {
+        var assemblies = new List<Assembly>
+        {
+            typeof(T).Assembly,
+            Assembly.GetExecutingAssembly()
+        }.ToArray();
+        //services.AddAutoMapper(assemblies);
+        services.AddMediatR(assemblies);
         return services;
     }
 }
