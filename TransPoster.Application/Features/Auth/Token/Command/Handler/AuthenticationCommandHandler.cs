@@ -3,12 +3,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Localization;
 using TransPorter.Domain;
 using TransPorter.Shared.Wrapper;
-using TransPoster.Application.Features.Auth.Token.DTOs;
 using TransPoster.Application.Interface;
 
 namespace TransPoster.Application.Features.Auth.Token.Command.Handler
 {
-    public class AuthenticationCommandHandler : IRequestHandler<AuthenticationCommand, IResult<TokenResponse>>
+    public class AuthenticationCommandHandler : IRequestHandler<AuthenticationCommand, IResult>
     {
         private static readonly string ErrowMessage = "Invalid Login Attempt!!!";
         private readonly ITokenService _tokenService;
@@ -25,18 +24,18 @@ namespace TransPoster.Application.Features.Auth.Token.Command.Handler
             _userManager = userManager;
         }
 
-        public async Task<IResult<TokenResponse>> Handle(AuthenticationCommand request, CancellationToken cancellationToken)
+        public async Task<IResult> Handle(AuthenticationCommand request, CancellationToken cancellationToken)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
-            if (user is null) return await Result<TokenResponse>.FailAsync(_localizer[ErrowMessage]);
+            if (user is null) return await Result.FailAsync(_localizer[ErrowMessage]);
             if (!user.IsActive)
-                return await Result<TokenResponse>.FailAsync(_localizer["User Not Active. Please contact the administrator."]);
+                return await Result.FailAsync(_localizer["User Not Active. Please contact the administrator."]);
             var result = await _signInManager.PasswordSignInAsync(request.Email, request.Password,
                    request.RememberMe, true);
             if (result.Succeeded) return await _tokenService.GetRefreshToken(user);
-            if (result.IsLockedOut) return await Result<TokenResponse>.FailAsync(_localizer["Access Denied. Account Blocked"]);
-            if (result.IsNotAllowed) return await Result<TokenResponse>.FailAsync(_localizer["Access Denied. Authentication not allowed."]);
-            return await Result<TokenResponse>.FailAsync(_localizer[ErrowMessage]);
+            if (result.IsLockedOut) return await Result.FailAsync(_localizer["Access Denied. Account Blocked"]);
+            if (result.IsNotAllowed) return await Result.FailAsync(_localizer["Access Denied. Authentication not allowed."]);
+            return await Result.FailAsync(_localizer[ErrowMessage]);
         }
     }
 
