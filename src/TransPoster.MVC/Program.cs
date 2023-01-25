@@ -1,5 +1,6 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using TransPoster.Application;
 using TransPoster.MVC.Extensions;
 using TransPoster.MVC.Infra;
 using CustomRequestCultureProvider = TransPoster.MVC.Infra.CustomRequestCultureProvider;
@@ -16,6 +17,8 @@ builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(60);//You can set Time   
 });
+builder.Services.AddLocalization();
+builder.Services.GetApplicationLayerConfig<AppConfiguration>();
 
 builder.Services.AddLocalization(opt =>
 {
