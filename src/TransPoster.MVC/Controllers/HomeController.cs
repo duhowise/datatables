@@ -4,18 +4,8 @@ using Microsoft.Extensions.Localization;
 
 namespace TransPoster.MVC.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController<HomeController>
     {
-        private readonly ILogger<AuthController> _logger;
-        private readonly IStringLocalizer<HomeController> _localizer;
-
-        public HomeController(ILogger<AuthController> logger, IStringLocalizer<HomeController> localizer)
-        {
-            _logger = logger;
-            _localizer = localizer;
-        }
-
-
         public IActionResult Index()
         {
             ViewData["WelcomeText"] = _localizer["Welcome"].Value;

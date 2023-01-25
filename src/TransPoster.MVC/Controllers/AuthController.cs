@@ -1,21 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 using TransPoster.MVC.Models.Auth;
 
 namespace TransPoster.MVC.Controllers
 {
-    public class AuthController : Controller
+    public class AuthController : BaseController<AuthController>
     {
         private const string LoginAttemptsSessionName = "_LoginAttempts";
-
-        private readonly ILogger<AuthController> _logger;
-        private readonly IStringLocalizer<AuthController> _localizer;
-
-        public AuthController(ILogger<AuthController> logger, IStringLocalizer<AuthController> localizer)
-        {
-            _logger = logger;
-            _localizer = localizer;
-        }
 
         public IActionResult Login()
         {
