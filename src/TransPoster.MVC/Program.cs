@@ -1,9 +1,8 @@
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
 using TransPoster.Application;
 using TransPoster.MVC.Extensions;
-using TransPoster.MVC.Infra;
-using CustomRequestCultureProvider = TransPoster.MVC.Infra.CustomRequestCultureProvider;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,22 +30,19 @@ builder.Services.Configure<RequestLocalizationOptions>(options =>
     {
         new CultureInfo("en-US"),
         new CultureInfo("he-IL"),
-        new CultureInfo("fr-FR"),
-        new CultureInfo("en-GB")
     };
 
-    options.DefaultRequestCulture = new RequestCulture("he-IL");
+    options.DefaultRequestCulture = new RequestCulture("en-US");
     options.SupportedCultures = supportedCultures;
     options.SupportedUICultures = supportedCultures;
-    options.RequestCultureProviders.Clear();
-    options.RequestCultureProviders.Add(new MyCustomRequestCultureProvider());
 });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorOptions(options =>
 {
     options.ViewLocationFormats.Add("/{0}.cshtml");
-});
+}).AddViewLocalization();
+
 
 
 var app = builder.Build();
@@ -69,6 +65,10 @@ app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
 app.UseSession();
 
 app.UseAuthorization();
+
+var options = app.Services.GetService<IOptions<RequestLocalizationOptions>>();
+app.UseRequestLocalization(options.Value);
+
 
 app.MapControllerRoute(
     name: "default",
