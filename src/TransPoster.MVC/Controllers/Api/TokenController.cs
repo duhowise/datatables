@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TransPoster.Application.Features.Auth.Token.Command;
 
-namespace TransPoster.MVC.Controllers
+namespace TransPoster.MVC.Controllers.Api
 {
     public class TokenController : BaseApiController<TokenController>
     {

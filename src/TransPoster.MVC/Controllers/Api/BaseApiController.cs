@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TransPoster.MVC.Controllers;
+namespace TransPoster.MVC.Controllers.Api;
 
 //[Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public abstract class BaseApiController<T> : ControllerBase
 {
     private IMediator? _mediatorInstance;

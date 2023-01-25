@@ -1,4 +1,4 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualbasic,csharp,visualstudiocode,visualstudio,rider
+﻿# Created by https://www.toptal.com/developers/gitignore/api/visualbasic,csharp,visualstudiocode,visualstudio,rider
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualbasic,csharp,visualstudiocode,visualstudio,rider
 
 ### Csharp ###
@@ -731,3 +731,35 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/visualbasic,csharp,visualstudiocode,visualstudio,rider
 .vs/TransPoster/v17/.suo
+/.vs/TransPoster/v17/.suo
+/.vs/slnx.sqlite
+/src/TransPoster.MVC/obj/Debug/net7.0/ref/TransPoster.MVC.dll
+/src/TransPoster.MVC/obj/Debug/net7.0/scopedcss/projectbundle/TransPoster.MVC.bundle.scp.css
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.nuget.cache
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.dgspec.json
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.props
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.targets
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.assets.cache
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.nuget.cache
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.dgspec.json
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.props
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.targets
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.assets.cache
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.genruntimeconfig.cache
+src/TransPoster.MVC/obj/Release/net7.0/TransPoster.MVC.assets.cache
+src/TransPoster.MVC/obj/Release/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache
+/src/TransPoster.MVC/bin
+/src/TransPoster.MVC/bundleconfig.json
+/TransPorter.Domain/obj
+/TransPorter.Infrastructure/obj
+/TransPorter.Shared/obj
+/TransPoster.Application/obj
+/TransPoster.Core/obj
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.nuget.cache
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.dgspec.json

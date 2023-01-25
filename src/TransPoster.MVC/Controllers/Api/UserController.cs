@@ -4,7 +4,7 @@ using TransPoster.Application.Features.Auth.User.Commands;
 using TransPoster.Application.Features.Auth.User.DTOs.Request;
 using TransPoster.Application.Features.Auth.User.Queries;
 
-namespace TransPoster.MVC.Controllers;
+namespace TransPoster.MVC.Controllers.Api;
 
 public class UserController : BaseApiController<UserController>
 {
