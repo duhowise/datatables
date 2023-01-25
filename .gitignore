@@ -743,3 +743,13 @@ src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.props
 src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.targets
 src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.assets.cache
 src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache
+src/TransPoster.MVC/obj/project.assets.json
+src/TransPoster.MVC/obj/project.nuget.cache
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.dgspec.json
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.props
+src/TransPoster.MVC/obj/TransPoster.MVC.csproj.nuget.g.targets
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.assets.cache
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache
+src/TransPoster.MVC/obj/Debug/net7.0/TransPoster.MVC.genruntimeconfig.cache
+src/TransPoster.MVC/obj/Release/net7.0/TransPoster.MVC.assets.cache
+src/TransPoster.MVC/obj/Release/net7.0/TransPoster.MVC.csproj.AssemblyReference.cache

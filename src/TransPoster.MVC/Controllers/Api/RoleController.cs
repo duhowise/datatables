@@ -3,7 +3,7 @@ using TransPoster.Application.Features.Auth.Role.Command;
 using TransPoster.Application.Features.Auth.Role.DTOs.Request;
 using TransPoster.Application.Features.Auth.Role.Queries;
 
-namespace TransPoster.MVC.Controllers;
+namespace TransPoster.MVC.Controllers.Api;
 
 public class RoleController : BaseApiController<RoleController>
 {
