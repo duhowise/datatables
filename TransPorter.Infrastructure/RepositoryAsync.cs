@@ -7,9 +7,9 @@ namespace TransPorter.Infrastructure;
 
 public class RepositoryAsync<T> : IRepositoryAsync<T> where T : class, IEntity
 {
-    private readonly DbContext _dbContext;
+    private readonly AppDbContext _dbContext;
 
-    public RepositoryAsync(DbContext dbContext)
+    public RepositoryAsync(AppDbContext dbContext)
     {
         _dbContext = dbContext;
     }

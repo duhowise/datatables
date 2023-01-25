@@ -12,17 +12,23 @@ namespace TransPoster.Application.Features.Auth.User.Queries.Handlers;
 public class GetUsersQueryHandler : IRequestHandler<GetUsersQuery, PaginatedResult<ApplicationUserResponse>>
 {
     private readonly IRepositoryAsync<ApplicationUser> _repository;
-    private readonly IMapper _mapper;
-    public GetUsersQueryHandler(IRepositoryAsync<ApplicationUser> repository, IMapper mapper)
+    public GetUsersQueryHandler(IRepositoryAsync<ApplicationUser> repository)
     {
         _repository = repository;
-        _mapper = mapper;
     }
 
     public async Task<PaginatedResult<ApplicationUserResponse>> Handle(GetUsersQuery query, CancellationToken cancellationToken)
     {
         var spec = new ApplicationUserFilterSpecification(query.Request);
-        var data = await _mapper.ProjectTo<ApplicationUserResponse>(_repository.Entities.Specify(spec))
+        var data = await _repository.Entities.Specify(spec)
+            .Select(u=> new ApplicationUserResponse
+            {
+                Id = u.Id,
+                Email = u.Email,
+                FirstName = u.FirstName,
+                LastName = u.LastName,
+                Gender= u.Gender,
+            })
             .ToPaginatedListAsync(query.Request.PageNumber, query.Request.PageSize);
         return data;
     }
