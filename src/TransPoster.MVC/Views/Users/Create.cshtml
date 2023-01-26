@@ -1,31 +1,52 @@
-﻿@{
+﻿@model TransPoster.MVC.Models.Users.CreateUser
+
+@{
     Layout = "~/Views/Shared/_AppLayout.cshtml";
     ViewData["Title"] = "Create User";
+
+    List<string> genders = new()
+    {
+        "male", "female"
+    };
 }
 
 <h1>Create user page</h1>
 
 <form class="row g-3">
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control">
     </div>
     <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control">
     </div>
-    <div class="col-12">
-        <label for="inputName" class="form-label">Name</label>
-        <input type="text" class="form-control" id="inputName" placeholder="1234 Main St">
+    <div class="col-md-6">
+        <label asp-for="FirstName" class="form-label">First Name</label>
+        <input asp-for="FirstName" type="text" class="form-control" placeholder="First Name">
     </div>
-    
-    <div class="col-md-4">
-        <label for="inputState" class="form-label">Role</label>
-        <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>Admin</option>
+    <div class="col-md-6">
+        <label asp-for="Surname" class="form-label">Last Name</label>
+        <input asp-for="Surname" type="text" class="form-control" placeholder="Last Name">
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="Gender" class="form-label">Gender</label>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="Gender" asp-for="Gender" asp-items="genders">
         </select>
     </div>
+    <div class="col-md-6">
+        <label asp-for="PhoneNumber" class="form-label">Phone NUmber</label>
+        <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Eg. 972-53-643-6788">
+    </div>
+
+    @*<div class="col-md-4">
+    <label for="inputState" class="form-label">Role</label>
+    <select id="inputState" class="form-select">
+    <option selected>Choose...</option>
+    <option>Admin</option>
+    </select>
+    </div>*@
     <div class="col-12">
         <button type="submit" class="btn btn-primary">Create</button>
     </div>

@@ -8,10 +8,11 @@
 <table id="usersTable" class="table table-hover">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
+            <th scope="col">Id</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
             <th scope="col">Email</th>
-            <th scope="col">Role</th>
+            <th scope="col">Gender</th>
             <th scope="col">Actions</th>
 
         </tr>
@@ -47,21 +48,29 @@
 
     <script type="text/javascript">
 
-            $('#usersTable').DataTable({
-                serverSide: true,
-                ajax: {
-                    url: '/api/users',
-                    dataFilter: function (data) {
-                        //var json = jQuery.parseJSON(data);
-                        //json.recordsTotal = json.total;
-                        //json.recordsFiltered = json.total;
-                        //json.data = json.list;
-
-                        //return JSON.stringify(json); 
-                        console.log(data, 'This is the data please')
-                        return data;
-                    }
+        const table = $('#usersTable').DataTable({
+            processing: true,
+            serverSide: true,
+            // Paging Setups
+            paging: true,
+            ajax: {
+                url: "api/user/dtusers",
+                type: "POST",
+                contentType: "application/json",
+                dataType: "json",
+                data: function (d) {
+                    console.log(d, 'yesssss')
+                    return JSON.stringify(d);
                 }
-            });
+            },
+            columns: [
+                { data: "Id" },
+                { data: "Email" },
+                { data: "FirstName" },
+                { data: "LastName" },
+                { data: "Gender" },
+            ]
+        });
+        
     </script>
 }
