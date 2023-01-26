@@ -1,7 +1,9 @@
 using System.Globalization;
+using MediatR;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using TransPoster.Application;
+using TransPoster.Application.Features.Auth.Token.Command.Handler;
 using TransPoster.MVC.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +20,7 @@ builder.Services.AddSession(options =>
 });
 builder.Services.AddLocalization();
 builder.Services.GetApplicationLayerConfig<AppConfiguration>();
-
+builder.Services.AddMediatR(typeof(AuthenticationCommandHandler));
 builder.Services.AddLocalization(opt =>
 {
     opt.ResourcesPath = "Resources";
