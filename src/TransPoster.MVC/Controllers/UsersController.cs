@@ -28,9 +28,8 @@ public class UsersController : BaseController<UsersController>
     }
 
     [HttpPost]
-    public async Task<IActionResult> Store([FromBody] CreateUser body)
+    public async Task<IActionResult> Store(CreateUser body)
     {
-
         var result = await _mediator.Send(new RegisterUserCommand()
         {
             Email = body.Email,

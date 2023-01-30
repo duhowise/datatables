@@ -4,15 +4,16 @@
     Layout = "~/Views/Shared/_AppLayout.cshtml";
     ViewData["Title"] = "Create User";
 
-    List<string> genders = new()
+    List<SelectListItem> genders = new()
     {
-        "male", "female"
+        new () { Value = "male", Text = "Male" },
+        new () { Value = "female", Text = "Female" },
     };
 }
 
 <h1>Create user page</h1>
 
-<form class="row g-3">
+<form class="row g-3" asp-controller="Users" asp-action="Store" method="post">
     <div class="col-md-6">
         <label asp-for="Email" class="form-label">Email</label>
         <input asp-for="Email" type="email" class="form-control">
