@@ -38,7 +38,6 @@
         "Secret": "ad1e875b-713d-41a7-9f70-cd1d9225ba67",
         "AppConnectionString": "server=localhost;database=TransPoster_DB;Trusted_Connection=True;Encrypt=False"
       }
-      }
     }
   }
 }
