@@ -1,15 +1,60 @@
-﻿@model List<TransPoster.MVC.ViewComponents.Shared.NavItem>
+﻿@using TransPoster.MVC.ViewComponents.Shared
+@{
+    var items = (List<NavItem>) ViewData["NavItems"] ?? new List<NavItem>();
+
+    var heads = (List<NavHead>)ViewData["NavHeads"] ?? new List<NavHead>();
+}
 
 <div class="position-sticky pt-3 sidebar-sticky">
-    <ul class="nav flex-column">
-        @foreach (var item in Model)
+    <ul class="nav nav-pills flex-column">
+        @foreach (var item in @items)
         {
             <li class="nav-item">
-                <a class="nav-link" asp-controller="@item.Controller" asp-action="@item.Action">
+                <a class="nav-link" is-active-route asp-controller="@item.Controller" asp-action="@item.Action">
                     <i class="bi bi-@item.Icon"></i>
                     @item.Controller
                 </a>
             </li>
         }
     </ul>
-</div>
+    <ul class="list-unstyled ps-0">
+        @foreach (var head in @heads)
+        {
+            <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#@head.Name-collapse" aria-expanded="true">
+                    <i class="bi bi-@head.Icon me-3"></i>@head.Name
+                </button>
+                <div class="collapse" id="@head.Name-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        @foreach (var item in @head.NavItems)
+                        {
+                            <li>
+
+                                <a is-active-route asp-controller="@item.Controller" asp-action="@item.Action" class="link-dark d-inline-flex text-decoration-none rounded">
+                                    <i class="bi bi-@item.Icon"></i>
+                                    @item.Name
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </li>
+        }
+        
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                Dashboard
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

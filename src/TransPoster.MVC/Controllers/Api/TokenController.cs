@@ -1,15 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TransPoster.Application.Features.Auth.Token.Command;
 
-namespace TransPoster.MVC.Controllers.Api
+namespace TransPoster.MVC.Controllers.Api;
+
+public class TokenController : BaseApiController<TokenController>
 {
-    public class TokenController : BaseApiController<TokenController>
+    [HttpPost()]
+    public async Task<IActionResult> Get(AuthenticationCommand command)
     {
-        [HttpPost()]
-        public async Task<IActionResult> Get(AuthenticationCommand command)
-        {
-            var result = await _mediator.Send(command);
-            return result.Succeeded ? Ok(result) : Unauthorized(result);
-        }
+        var result = await _mediator.Send(command);
+        return result.Succeeded ? Ok(result) : Unauthorized(result);
     }
 }
