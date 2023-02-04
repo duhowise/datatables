@@ -1,13 +1,18 @@
 using System.Globalization;
 using MediatR;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using TransPoster.Application;
+using TransPoster.MVC.Data.Products;
 using TransPoster.Application.Features.Auth.Token.Command.Handler;
 using TransPoster.MVC.Extensions;
+using TransPoster.MVC.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContextPool<SampleDbContext>(options => options.UseInMemoryDatabase("sample"));
 builder.Services.GetDataBaseDbContextConfig(builder.Configuration);
 builder.Services.GetUserIdentityConfig();
 var settings = builder.Services.GetApplicationSettings(builder.Configuration);
@@ -45,9 +50,23 @@ builder.Services.AddControllersWithViews().AddRazorOptions(options =>
     options.ViewLocationFormats.Add("/{0}.cshtml");
 }).AddViewLocalization();
 
-
-
+builder.Services.AddScoped<ProductViewModelProccesser>();
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var context = services.GetRequiredService<SampleDbContext>();
+        context.Database.EnsureCreated();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred creating the DB.");
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
